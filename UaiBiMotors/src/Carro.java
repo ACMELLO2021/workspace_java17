@@ -11,6 +11,7 @@ public class Carro {
 	int    km;
 	String cor;
 	double preco;
+
 	
 	void exibirAnuncio() {
 		System.out.println("Carro: "+marca + " " + modelo);
