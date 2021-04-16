@@ -20,8 +20,6 @@ public class Empregado {
 		salario += salario * reajuste / 100 ;
 	}
 	
-
-
 	public String getNome() {
 		return nome;
 	}
