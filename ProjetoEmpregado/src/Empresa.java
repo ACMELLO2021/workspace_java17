@@ -16,25 +16,28 @@ public class Empresa {
 		 */
 		
 		Empregado e1    , e2    , e3;
-		e1 = new Empregado();
-		e2 = new Empregado();
-		e3 = new Empregado();
+		e1 = new Empregado("Isidro","Professor", 5000.00);
+		e2 = new Empregado("Jane","Coordenadora", 7500.00);
+		e3 = new Empregado("Alberto", "Lider de Projetos", 8350.00);
 		
+		
+		
+	
 		/* como a estrutura do objeto Empregado está inacessível de forma direta, ou seja
 		 * eu não consigo apontar diretamente o atributo que eu quero colocar valor, como eu faço?
 		 * uso os método de modificação (métodos SET)
 		 */
-		e1.setNome("Isidro");
-		e1.setCargo("Professor");
-		e1.setSalario(5000.00);
-		
-		e2.setNome("Jane");
-		e2.setCargo("Coordenadora");
-		e2.setSalario(7500.00);
-		
-		e3.setNome("Alberto");
-		e3.setCargo("Lider de Projeto");
-		e3.setSalario(8350.00);
+//		e1.setNome("Isidro");
+//		e1.setCargo("Professor");
+//		e1.setSalario(5000.00);
+//		
+//		e2.setNome("Jane");
+//		e2.setCargo("Coordenadora");
+//		e2.setSalario(7500.00);
+//		
+//		e3.setNome("Alberto");
+//		e3.setCargo("Lider de Projeto");
+//		e3.setSalario(8350.00);
 		
 		double percentual;
 		
