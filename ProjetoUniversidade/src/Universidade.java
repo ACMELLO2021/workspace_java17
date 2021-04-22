@@ -57,13 +57,5 @@ public class Universidade {
 				System.out.println("Aluno "+a.getNome() + " exatamente na média");
 			}
 		}
-		
-		
-		
-		
-		
-		
-		
 	}
-
 }

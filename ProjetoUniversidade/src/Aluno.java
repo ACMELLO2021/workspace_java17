@@ -9,6 +9,24 @@ public class Aluno {
 		this.rendimento = rendimento;
 	}
 	
+	public Aluno(int numMatricula, String nome) {
+		this.numMatricula = numMatricula;
+		this.nome = nome;
+		this.rendimento = 0.0;
+	}
+	
+	public Aluno(int numMatricula) {
+		this.numMatricula = numMatricula;
+		this.nome = "";
+		this.rendimento = 0.0;
+	}
+	
+	public Aluno() {
+		this.numMatricula = -1;
+		this.nome = "";
+		this.rendimento = 0.0;
+	}
+	
 	public String exibirAluno() {
 		return numMatricula + " | " + nome + " | " + rendimento;
 	}

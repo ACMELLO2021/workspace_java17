@@ -19,12 +19,16 @@ public class VitrineVirtual {
 		}
 		
 		for (Produto p : lista) {  // para cada produto P pertencente à lista
+			p.aplicarDesconto(10);
+			p.diminuiEstoque();
 			System.out.println(p.exibirProduto());
 		}
 //		System.out.println(lista.get(0).exibirProduto());
 //		System.out.println(lista.get(1).exibirProduto());
 //		System.out.println(lista.get(2).exibirProduto());
 //		System.out.println(lista.get(3).exibirProduto());
+		
+		
 	}
 
 }
