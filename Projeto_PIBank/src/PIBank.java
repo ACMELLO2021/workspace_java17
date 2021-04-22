@@ -51,7 +51,7 @@ public class PIBank {
 				}
 				if (contaSelecionada != null) {
 					System.out.println("Digite o valor a sacar");
-					valor = teclado.nextDouble();
+					valor = teclado.nextDouble();			
 					if (contaSelecionada.debitar(valor)) {
 						System.out.println("Debito efetuado com sucesso");
 					}
@@ -77,7 +77,6 @@ public class PIBank {
 			}
 			
 		} while (opcao != -1);
-		
 		
 		
 		
