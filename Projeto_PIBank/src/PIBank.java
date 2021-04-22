@@ -1,45 +1,90 @@
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class PIBank {
 	public static void main(String[] args) {
-		Conta c1, c2;
-//		ContaEspecial c2;
+		ArrayList<Conta> listaDeContas;
+		Scanner teclado = new Scanner(System.in);
+		int opcao, numConta;
+		double valor;
+		Conta contaSelecionada;
 		
-		c1 = new Conta("Isidro", "123.456.789-00", 5843,  0.0);
-		c2 = new ContaEspecial("Luana","987.654.321-00", 7896, 0.0, 500.0);
+		listaDeContas = new ArrayList<Conta>();
 		
-//		c1.setNumero(5843);
-//		c1.setNomeTitular("Isidro");
-//		c1.setCpf("123.456.789-00");
+		listaDeContas.add(new ContaEspecial("Cliente 1", "cpf1", 10001, 0.0, 100));
+		listaDeContas.add(new Conta("Cliente 2", "cpf2", 10002, 0.0));
+		listaDeContas.add(new ContaEspecial("Cliente 3", "cpf3", 10003, 0.0, 200));
+		listaDeContas.add(new Conta("Cliente 4","cpf4", 10004, 0.0));
 		
-//		c2.setNumero(7896);
-//		c2.setNomeTitular("Luana");
-//		c2.setCpf("987.654.321-00");
-//		c2.setLimite(500);
+		do {
+			contaSelecionada = null;
+			System.out.println("Digite 1 - Deposito / 2 - Saque / 3 - Info / -1 - Sair");
+			opcao = teclado.nextInt();
+			switch(opcao) {
+			case 1:
+				System.out.println("Digte o numero da conta");
+				numConta = teclado.nextInt();
+				for (Conta c: listaDeContas) {
+					if (c.getNumero() == numConta) {
+						contaSelecionada = c;
+						break;
+					}
+				}
+				if (contaSelecionada != null) {
+					System.out.println("Digite o valor a depositar");
+					valor = teclado.nextDouble();
+					contaSelecionada.creditar(valor);
+					System.out.println(contaSelecionada);
+				}
+				else {
+					System.out.println("Conta inexistente!");
+				}
+				break;
+			case 2:
+				System.out.println("Digte o numero da conta");
+				numConta = teclado.nextInt();
+				for (Conta c: listaDeContas) {
+					if (c.getNumero() == numConta) {
+						contaSelecionada = c;
+						break;
+					}
+				}
+				if (contaSelecionada != null) {
+					System.out.println("Digite o valor a sacar");
+					valor = teclado.nextDouble();
+					if (contaSelecionada.debitar(valor)) {
+						System.out.println("Debito efetuado com sucesso");
+					}
+					else {
+						System.out.println("Saldo insuficiente");
+					}
+					System.out.println(contaSelecionada);
+				}
+				else {
+					System.out.println("Conta inexistente!");
+				}
+				break;
+			case 3:
+				for (Conta c: listaDeContas) {
+				    System.out.println(c);					
+				}
+				break;
+			case -1:
+				System.out.println("TCHAU");
+				break;
+			default:
+				System.out.println("OPCAO INVALIDA!");				
+			}
+			
+		} while (opcao != -1);
 		
-		System.out.println(c1);
-		c1.creditar(100);
-		System.out.println(c1);
-		if (c1.debitar(30)) {
-			System.out.println("Debito efetuado com sucesso");
-		}
-		else {
-			System.out.println("Saldo insuficiente");
-		}
-		System.out.println(c1);
-		//----------- fazendo a mesma coisa com a conta especial 
 		
 		
-		System.out.println(c2);
-		c2.creditar(100);
-		System.out.println(c2);
-		if (c2.debitar(130)) {
-			System.out.println("Debito efetuado com sucesso");
-		}
-		else {
-			System.out.println("Saldo insuficiente");
-		}
 		
-		System.out.println(c2);
+		
+		
+		
+		teclado.close();
 		
 		
 		
